@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Heart Disease Prediction</title>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+   <style>
+
+    /* body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+    } */
+
+    /* .container {
+            text-align: center;
+        } */
+
+    h1 {
+            color: #333;
+            margin-top: 100px;
+            
+    }
+    #age{
+        border:2px solid black;
+        
+
+    }
+
+    #sex{
+        border:2px solid black;
+
+    }
+
+    #cp{
+        border:2px solid black;
+
+    }
+
+    #trestbps{
+        border:2px solid black;
+
+    }
+
+    #chol{
+        border:2px solid black;
+
+    }
+
+    #fbs{
+        border:2px solid black;
+
+    }
+
+    #restecg{
+        border:2px solid black;
+
+    }
+
+    #thalach{
+        border:2px solid black;
+
+    }
+
+    #exang{
+        border:2px solid black;
+
+    }
+
+    #oldpeak{
+        border:2px solid black;
+
+    }
+
+    #slope{
+        border:2px solid black;
+
+    }
+
+    #ca{
+        border:2px solid black;
+
+    }
+
+    #thal{
+        border:2px solid black;
+
+    }
+
+    h1 {
+            color: #333;
+            margin-top: 10px;
+    }
+
+   </style>
+   
+</head>
+<body>
+   <div class="container mt-5">
+       <h1 class="mb-4">Heart Disease Prediction</h1>
+       <form method="post" action="/predict">
+           
+           <div class="form-group">
+               <label for="age">Enter Age:</label>
+               <input type="text" class="form-control" id="age" name="age" pattern="[0-9]+([.][0-9]+)?" required>
+           </div>
+           
+           <div class="form-group">
+               <label for="sex">Enter Sex:</label>
+               <input type="text" class="form-control" id="sex" name="sex" pattern="[0-9]+([.][0-9]+)?" required>
+           </div>
+           
+
+           <div class="form-group">
+            <label for="cp">Enter Chest Pain Type:</label>
+            <input type="text" class="form-control" id="cp" name="cp" pattern="[0-9]+([.][0-9]+)?" required>
+           </div>
+
+           <div class="form-group">
+            <label for="trestbps">Enter Resting Blood Pressure (in mm Hg):</label>
+            <input type="text" class="form-control" id="trestbps" pattern="[0-9]+([.][0-9]+)?" name="trestbps" required>
+        </div>
+
+        <div class="form-group">
+            <label for="chol">Enter Serum Cholestoral (in mg/dl):</label>
+            <input type="text" class="form-control" id="chol" name="chol" pattern="[0-9]+([.][0-9]+)?" required>
+        </div>
+
+        <div class="form-group">
+            <label for="fbs">Enter Fasting Blood Sugar (in mg/dl):</label>
+            <input type="text" class="form-control" id="fbs" name="fbs" pattern="[0-9]+([.][0-9]+)?" required>
+        </div>
+
+        <div class="form-group">
+            <label for="restecg">Enter Resting Electrocardiographic Results :</label>
+            <input type="text" class="form-control" id="restecg" name="restecg" pattern="[0-9]+([.][0-9]+)?" required>
+        </div>
+
+        
+
+        <div class="form-group">
+            <label for="thalach">Enter Maximum Heart Rate achieved:</label>
+            <input type="text" class="form-control" id="thalach" name="thalach" pattern="[0-9]+([.][0-9]+)?" required>
+        </div>
+
+        <div class="form-group">
+            <label for="exang">Enter Exercise Induced Angina:</label>
+            <input type="text" class="form-control" id="exang" name="exang" pattern="[0-9]+([.][0-9]+)?" required>
+        </div>
+
+        <div class="form-group">
+            <label for="oldpeak">Enter Oldpeak:</label>
+            <input type="text" class="form-control" id="oldpeak" name="oldpeak" pattern="[0-9]+([.][0-9]+)?" required>
+        </div>
+
+
+        <div class="form-group">
+            <label for="slope">Enter Slope of Peak Exercise:</label>
+            <input type="text" class="form-control" id="slope" name="slope" pattern="[0-9]+([.][0-9]+)?" required>
+        </div>
+
+        <div class="form-group">
+            <label for="ca">Enter No. of Major Vessels:</label>
+            <input type="text" class="form-control" id="ca" name="ca" pattern="[0-9]+([.][0-9]+)?" required>
+        </div>
+
+        <div class="form-group">
+            <label for="thal">Enter thal:</label>
+            <input type="text" class="form-control" id="thal" name="thal" pattern="[0-9]+([.][0-9]+)?" required>
+        </div>
+
+        
+
+        
+
+
+           <button type="submit" class="btn btn-primary">Predict</button>
+       </form>
+       {% if prediction_result %}
+       <div class="mt-4">
+           <h4>Prediction Result:</h4>
+           <p>{{ prediction_result }}</p>
+       </div>
+       {% endif %}
+   </div>
+</body>
+</html>
