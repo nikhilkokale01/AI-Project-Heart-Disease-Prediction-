@@ -1,2 +1,2 @@
 
-Heart Disease Prediction is based on Logistic Regression which predicts whether the person has heart disease or not.
+Created a Heart Disease Prediction model utilizing Logistic Regression in Artificial Neural Network using python, demonstrating practical application of machine learning in healthcare.
